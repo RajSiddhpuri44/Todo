@@ -1,0 +1,14 @@
+.taskName {
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+.singleTask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+.fa-solid {
+  margin-left: 10px;
+}
