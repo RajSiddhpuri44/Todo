@@ -8,7 +8,16 @@
   align-items: center;
   justify-content: space-between;
   padding: 5px;
+  width: 100%;
+  scroll-snap-align: start;
 }
 .fa-solid {
   margin-left: 10px;
+  cursor: pointer;
+}
+.fa-solid:hover {
+  color: #ff9b9b;
+}
+.check-input {
+  cursor: pointer;
 }

@@ -2,7 +2,7 @@ import "./TodoTask.css";
 import { checkHandler, removeTask } from "./helper";
 export default function TodoTask({ task, toggleTask, todos }) {
   return (
-    <div className="singleTask taskGrid">
+    <div className="singleTask">
       <p className="taskName">
         {task.isDone ? <strike>{task.task}</strike> : <span>{task.task}</span>}
       </p>
@@ -13,6 +13,7 @@ export default function TodoTask({ task, toggleTask, todos }) {
         type="checkbox"
         name="checkTask"
         id={task.id}
+        className="check-input"
         onChange={() => {
           checkHandler(task.id, todos, toggleTask);
         }}

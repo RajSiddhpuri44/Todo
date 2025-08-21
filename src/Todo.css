@@ -1,4 +1,46 @@
+#list-title {
+  margin: 0px;
+}
 .taskGrid {
   display: grid;
   grid-template-columns: 3fr 1fr 1fr;
+}
+#todoInput {
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  width: 90%;
+}
+#input-control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#add-btn {
+  width: 200px;
+  padding: 10px 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.task-container {
+  max-height: 40vh;
+  width: 100%;
+  padding-right: 10px;
+  overflow: scroll;
+  scrollbar-width: thin;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+}
+#task-stats {
+  margin: 0;
+  width: 100%;
+  padding-left: 20px;
+  margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

@@ -7,6 +7,9 @@ import { capitalizeFirstLetter } from "./helper";
 export default function Todo() {
   let [todos, setTodos] = useState(initData);
   let [newTask, setNewTask] = useState("");
+  let totalTask = todos.length;
+  let doneTask = todos.filter((task) => task.isDone).length;
+  let pendingTask = totalTask - doneTask;
   const eventHandler = (event) => {
     setNewTask(event.target.value);
   };
@@ -27,8 +30,16 @@ export default function Todo() {
 
   return (
     <>
-      <h1>Todo List</h1>
-      <div>
+      <h1 id="list-title">Todo List</h1>
+      <p id="task-stats">
+        <span>
+          Pending Task:
+          {pendingTask > 3 ? pendingTask + "😬" : pendingTask + "😮‍💨"}
+        </span>
+
+        <span>Done:{doneTask == 0 ? doneTask + "😒" : doneTask + "🫡"}</span>
+      </p>
+      <div id="input-control">
         <input
           type="text"
           name="todoInput"
@@ -37,11 +48,11 @@ export default function Todo() {
           value={newTask}
           onChange={eventHandler}
         />
-        <br />
-        <br />
-        <button onClick={addNewTodo}>Add new Todo</button>
+        <button onClick={addNewTodo} id="add-btn">
+          Add new Todo
+        </button>
       </div>
-      <div className="">
+      <div className="task-container">
         {todos.map((task, idx) => {
           return (
             <TodoTask
