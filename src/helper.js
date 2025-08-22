@@ -24,4 +24,5 @@ function arrangeTask(todos) {
   todos.sort((a, b) => a.isDone - b.isDone);
   return todos;
 }
+
 export { checkHandler, capitalizeFirstLetter, removeTask, arrangeTask };
