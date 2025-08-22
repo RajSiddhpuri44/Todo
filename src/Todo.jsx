@@ -5,12 +5,14 @@ import "./Todo.css";
 import { initData } from "./initData";
 import { capitalizeFirstLetter, arrangeTask } from "./helper";
 import TextField from "@mui/material/TextField";
-import DeleteAlert from "./DeleteAlert";
 
 export default function Todo() {
   let [todos, setTodos] = useState(() => arrangeTask(initData));
   let [newTask, setNewTask] = useState("");
   let [darkMode, setDarkMode] = useState(true);
+  let [pendingTask, setPendingTask] = useState(
+    () => todos.filter((task) => !task.isDone).length
+  );
 
   function changeTheme() {
     document.querySelector("body").style.backgroundColor = darkMode
@@ -19,10 +21,11 @@ export default function Todo() {
     document.body.style.color = darkMode ? "black" : "white";
     setDarkMode(!darkMode);
   }
-
+  useEffect(() => {
+    setPendingTask(() => todos.filter((task) => !task.isDone).length);
+  });
   let totalTask = todos.length;
   let doneTask = todos.filter((task) => task.isDone).length;
-  let pendingTask = totalTask - doneTask;
   const eventHandler = (event) => {
     setNewTask(event.target.value);
   };
@@ -53,7 +56,11 @@ export default function Todo() {
       <p id="task-stats">
         <span>
           Pending Task:
-          {pendingTask > 3 ? pendingTask + "😬" : pendingTask + "😮‍💨"}
+          {pendingTask == 0
+            ? pendingTask + "😁"
+            : pendingTask > 5
+            ? pendingTask + "😢"
+            : pendingTask + "😐"}
         </span>
 
         <span>Done:{doneTask == 0 ? doneTask + "😒" : doneTask + "🫡"}</span>
