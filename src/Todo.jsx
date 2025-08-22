@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import TodoTask from "./TodoTask";
 import "./Todo.css";
 import { initData } from "./initData";
-import { capitalizeFirstLetter } from "./helper";
+import { capitalizeFirstLetter, arrangeTask } from "./helper";
 export default function Todo() {
-  let [todos, setTodos] = useState(initData);
+  let [todos, setTodos] = useState(() => arrangeTask(initData));
   let [newTask, setNewTask] = useState("");
+
   let totalTask = todos.length;
   let doneTask = todos.filter((task) => task.isDone).length;
   let pendingTask = totalTask - doneTask;
@@ -18,10 +19,13 @@ export default function Todo() {
       console.log("empty");
       return;
     }
-    setTodos([
-      ...todos,
-      { task: capitalizeFirstLetter(newTask), id: uuidv4(), isDone: false },
-    ]);
+
+    setTodos(
+      arrangeTask([
+        { task: capitalizeFirstLetter(newTask), id: uuidv4(), isDone: false },
+        ...todos,
+      ])
+    );
     setNewTask("");
   };
   const toggleTask = (task) => {

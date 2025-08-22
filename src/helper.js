@@ -7,13 +7,21 @@ function checkHandler(id, todos, toggleTask) {
     }
   });
 }
+// Function for capitalized task name
 function capitalizeFirstLetter(str) {
   if (!str) return "";
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+// Function to remove selected task
 function removeTask(todos, toggleTask, id) {
   let newTasks = todos.filter((task) => task.id !== id);
   toggleTask(newTasks);
 }
 
-export { checkHandler, capitalizeFirstLetter, removeTask };
+//Function to arrange task according to its done status
+function arrangeTask(todos) {
+  todos.sort((a, b) => a.isDone - b.isDone);
+  return todos;
+}
+export { checkHandler, capitalizeFirstLetter, removeTask, arrangeTask };
