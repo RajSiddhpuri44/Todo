@@ -11,12 +11,12 @@
   width: 100%;
   scroll-snap-align: start;
 }
-.fa-solid {
+.delete-icon {
   margin-left: 10px;
   cursor: pointer;
 }
-.fa-solid:hover {
-  color: #ff9b9b;
+.delete-icon:hover {
+  color: "error";
 }
 .check-input {
   cursor: pointer;
