@@ -4,6 +4,7 @@ import TodoTask from "./TodoTask";
 import "./Todo.css";
 import { initData } from "./initData";
 import { capitalizeFirstLetter, arrangeTask } from "./helper";
+import TextField from "@mui/material/TextField";
 export default function Todo() {
   let [todos, setTodos] = useState(() => arrangeTask(initData));
   let [newTask, setNewTask] = useState("");
@@ -34,6 +35,7 @@ export default function Todo() {
 
   return (
     <>
+      <button className="dark_light_mode">Mode</button>
       <h1 id="list-title">Todo List</h1>
       <p id="task-stats">
         <span>
@@ -44,14 +46,41 @@ export default function Todo() {
         <span>Done:{doneTask == 0 ? doneTask + "😒" : doneTask + "🫡"}</span>
       </p>
       <div id="input-control">
-        <input
+        <TextField
           type="text"
           name="todoInput"
           id="todoInput"
           placeholder="Add New Todo"
           value={newTask}
           onChange={eventHandler}
-        />
+          label="Add Task"
+          variant="outlined"
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "white", // default
+              },
+              "_&:hover fieldset": {
+                borderColor: "white",
+              },
+              get "&:hover fieldset"() {
+                return this["_&:hover fieldset"];
+              },
+              set "&:hover fieldset"(value) {
+                this["_&:hover fieldset"] = value;
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "white", // focus
+              },
+            },
+            "& .MuiInputLabel-root": {
+              color: "white", // label color
+            },
+            "& .MuiInputBase-input": {
+              color: "white", // input text color
+            },
+          }}
+        ></TextField>
         <button onClick={addNewTodo} id="add-btn">
           Add new Todo
         </button>

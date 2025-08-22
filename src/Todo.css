@@ -1,3 +1,8 @@
+.dark_light_mode {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
 #list-title {
   margin: 0px;
 }
@@ -11,7 +16,9 @@
   border: none;
   font-size: 1rem;
   width: 90%;
+  color: white;
 }
+
 #input-control {
   width: 100%;
   display: flex;
