@@ -1,6 +1,6 @@
 import "./TodoTask.css";
 import { checkHandler, removeTask } from "./helper";
-import DeleteIcon from "@mui/icons-material/Delete";
+import DeleteAlert from "./DeleteAlert";
 export default function TodoTask({ task, toggleTask, todos }) {
   return (
     <div className="singleTask">
@@ -19,13 +19,13 @@ export default function TodoTask({ task, toggleTask, todos }) {
           checkHandler(task.id, todos, toggleTask);
         }}
       />
-
-      <DeleteIcon
+      <DeleteAlert todos={todos} toggleTask={toggleTask} id={task.id} />
+      {/* <DeleteIcon
         className="delete-icon"
         onClick={() => {
           removeTask(todos, toggleTask, task.id);
         }}
-      ></DeleteIcon>
+      ></DeleteIcon> */}
       {/* <i
         className="fa-solid fa-xmark"
         onClick={() => {

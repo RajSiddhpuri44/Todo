@@ -5,6 +5,8 @@ import "./Todo.css";
 import { initData } from "./initData";
 import { capitalizeFirstLetter, arrangeTask } from "./helper";
 import TextField from "@mui/material/TextField";
+import DeleteAlert from "./DeleteAlert";
+
 export default function Todo() {
   let [todos, setTodos] = useState(() => arrangeTask(initData));
   let [newTask, setNewTask] = useState("");
