@@ -7,6 +7,7 @@ import { capitalizeFirstLetter, arrangeTask } from "./helper";
 import TextField from "@mui/material/TextField";
 
 export default function Todo() {
+  console.log("hello");
   let [todos, setTodos] = useState(() => arrangeTask(initData));
   let [newTask, setNewTask] = useState("");
   let [darkMode, setDarkMode] = useState(true);
