@@ -50,3 +50,8 @@
   justify-content: center;
   flex-direction: column;
 }
+.todo-input-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

@@ -26,4 +26,22 @@ function arrangeTask(todos) {
   return todos;
 }
 
-export { checkHandler, capitalizeFirstLetter, removeTask, arrangeTask };
+// Edit Todo Function
+function editTodo(todos, id, newTask) {
+  let newTodos = todos.map((todo) => {
+    if (todo.id === id) {
+      todo.task = newTask;
+      return todo;
+    } else {
+      return todo;
+    }
+  });
+  return newTodos;
+}
+export {
+  checkHandler,
+  capitalizeFirstLetter,
+  removeTask,
+  arrangeTask,
+  editTodo,
+};

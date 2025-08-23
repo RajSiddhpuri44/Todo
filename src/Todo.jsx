@@ -5,12 +5,12 @@ import "./Todo.css";
 import { initData } from "./initData";
 import { capitalizeFirstLetter, arrangeTask } from "./helper";
 import TextField from "@mui/material/TextField";
-// import TextField from "./TextField";
 
 export default function Todo() {
   let [todos, setTodos] = useState(() => arrangeTask(initData));
   let [newTask, setNewTask] = useState("");
   let [darkMode, setDarkMode] = useState(true);
+  let [editMode, setEditMode] = useState(true);
   let [pendingTask, setPendingTask] = useState(
     () => todos.filter((task) => !task.isDone).length
   );
@@ -82,9 +82,23 @@ export default function Todo() {
           variant="outlined"
           sx={{ input: { color: darkMode ? "white" : "black" } }}
         />
-        <button onClick={addNewTodo} id="add-btn">
-          Add new Todo
-        </button>
+        <div className="todo-input-controls">
+          <button onClick={addNewTodo} id="add-btn">
+            Add new Todo
+          </button>
+          <button
+            onClick={() => {
+              setEditMode(!editMode);
+            }}
+            id="edit-btn"
+          >
+            {editMode ? (
+              <i className="fa-solid fa-square-xmark"></i>
+            ) : (
+              <i className="fa-solid fa-pen-to-square"></i>
+            )}
+          </button>
+        </div>
       </div>
       <div className="task-container">
         {todos.map((task, idx) => {
@@ -94,6 +108,7 @@ export default function Todo() {
               task={task}
               toggleTask={toggleTask}
               todos={todos}
+              editOpt={editMode}
             />
           );
         })}
