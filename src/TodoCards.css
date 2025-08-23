@@ -1,0 +1,23 @@
+.single-todo-card {
+  background-color: #ffe0b2;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+.task-name {
+  padding: 0;
+  margin: 0;
+}
+.task-description {
+  height: 35%;
+}
+.text-element {
+  text-align: start;
+  color: black;
+  padding: 0;
+  margin: 0;
+}

@@ -38,6 +38,7 @@ function editTodo(todos, id, newTask) {
   });
   return newTodos;
 }
+
 export {
   checkHandler,
   capitalizeFirstLetter,

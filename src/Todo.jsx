@@ -7,8 +7,8 @@ import { capitalizeFirstLetter, arrangeTask } from "./helper";
 import TextField from "@mui/material/TextField";
 
 export default function Todo() {
-  let [todos, setTodos] = useState(() => arrangeTask(initData));
-  let [newTask, setNewTask] = useState("");
+  // let [todos, setTodos] = useState(() => arrangeTask(initData));
+  // let [newTask, setNewTask] = useState("");
   let [darkMode, setDarkMode] = useState(true);
   let [editMode, setEditMode] = useState(false);
   let [pendingTask, setPendingTask] = useState(
@@ -28,20 +28,20 @@ export default function Todo() {
   const eventHandler = (event) => {
     setNewTask(event.target.value);
   };
-  const addNewTodo = () => {
-    if (newTask == "") {
-      console.log("empty");
-      return;
-    }
+  // const addNewTodo = () => {
+  //   if (newTask == "") {
+  //     console.log("empty");
+  //     return;
+  //   }
 
-    setTodos(
-      arrangeTask([
-        { task: capitalizeFirstLetter(newTask), id: uuidv4(), isDone: false },
-        ...todos,
-      ])
-    );
-    setNewTask("");
-  };
+  //   setTodos(
+  //     arrangeTask([
+  //       { task: capitalizeFirstLetter(newTask), id: uuidv4(), isDone: false },
+  //       ...todos,
+  //     ])
+  //   );
+  //   setNewTask("");
+  // };
   const toggleTask = (task) => {
     setTodos(task);
   };
