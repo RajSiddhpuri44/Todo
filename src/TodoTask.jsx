@@ -1,5 +1,5 @@
 import "./TodoTask.css";
-import { checkHandler, removeTask } from "./helper";
+import { checkHandler, arrangeTask } from "./helper";
 import DeleteAlert from "./DeleteAlert";
 export default function TodoTask({ task, toggleTask, todos }) {
   return (
@@ -20,6 +20,7 @@ export default function TodoTask({ task, toggleTask, todos }) {
         }}
       />
       <DeleteAlert todos={todos} toggleTask={toggleTask} id={task.id} />
+
       {/* <DeleteIcon
         className="delete-icon"
         onClick={() => {

@@ -3,7 +3,8 @@ function checkHandler(id, todos, toggleTask) {
     if (task.id === id) {
       task.isDone = true;
       let newTodos = [...todos];
-      toggleTask(newTodos);
+
+      toggleTask(arrangeTask(newTodos));
     }
   });
 }

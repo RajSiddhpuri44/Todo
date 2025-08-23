@@ -5,6 +5,7 @@ import "./Todo.css";
 import { initData } from "./initData";
 import { capitalizeFirstLetter, arrangeTask } from "./helper";
 import TextField from "@mui/material/TextField";
+// import TextField from "./TextField";
 
 export default function Todo() {
   let [todos, setTodos] = useState(() => arrangeTask(initData));
@@ -13,18 +14,17 @@ export default function Todo() {
   let [pendingTask, setPendingTask] = useState(
     () => todos.filter((task) => !task.isDone).length
   );
-
-  function changeTheme() {
+  useEffect(() => {
+    console.log("ue" + darkMode);
     document.querySelector("body").style.backgroundColor = darkMode
-      ? "white"
-      : "#242424";
-    document.body.style.color = darkMode ? "black" : "white";
-    setDarkMode(!darkMode);
-  }
+      ? "#242424"
+      : "white";
+    document.body.style.color = darkMode ? "white" : "black";
+  }, [darkMode]);
+
   useEffect(() => {
     setPendingTask(() => todos.filter((task) => !task.isDone).length);
   });
-  let totalTask = todos.length;
   let doneTask = todos.filter((task) => task.isDone).length;
   const eventHandler = (event) => {
     setNewTask(event.target.value);
@@ -49,7 +49,12 @@ export default function Todo() {
 
   return (
     <>
-      <button className="dark_light_mode" onClick={() => changeTheme()}>
+      <button
+        className="dark_light_mode"
+        onClick={() => {
+          setDarkMode(!darkMode);
+        }}
+      >
         {darkMode ? "Light" : "Dark"}
       </button>
       <h1 id="list-title">Todo List</h1>
@@ -75,7 +80,8 @@ export default function Todo() {
           onChange={eventHandler}
           label="Add Task"
           variant="outlined"
-        ></TextField>
+          sx={{ input: { color: darkMode ? "white" : "black" } }}
+        />
         <button onClick={addNewTodo} id="add-btn">
           Add new Todo
         </button>
