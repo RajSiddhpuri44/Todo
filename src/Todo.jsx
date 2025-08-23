@@ -10,7 +10,7 @@ export default function Todo() {
   let [todos, setTodos] = useState(() => arrangeTask(initData));
   let [newTask, setNewTask] = useState("");
   let [darkMode, setDarkMode] = useState(true);
-  let [editMode, setEditMode] = useState(true);
+  let [editMode, setEditMode] = useState(false);
   let [pendingTask, setPendingTask] = useState(
     () => todos.filter((task) => !task.isDone).length
   );
