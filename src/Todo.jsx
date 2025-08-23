@@ -56,7 +56,7 @@ export default function Todo() {
       >
         {darkMode ? "Light" : "Dark"}
       </button>
-      <h1 id="list-title">Todo List</h1>
+      <h1 id="list-title">New Todo List</h1>
       <p id="task-stats">
         <span>
           Pending Task:
