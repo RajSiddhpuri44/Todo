@@ -15,7 +15,6 @@ export default function Todo() {
     () => todos.filter((task) => !task.isDone).length
   );
   useEffect(() => {
-    console.log("ue" + darkMode);
     document.querySelector("body").style.backgroundColor = darkMode
       ? "#242424"
       : "white";
@@ -78,6 +77,7 @@ export default function Todo() {
           placeholder="Add New Todo"
           value={newTask}
           onChange={eventHandler}
+          onKeyDown={(event) => (event.key === "Enter" ? addNewTodo() : null)}
           label="Add Task"
           variant="outlined"
           sx={{ input: { color: darkMode ? "white" : "black" } }}
