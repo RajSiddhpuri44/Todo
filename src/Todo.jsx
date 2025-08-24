@@ -7,7 +7,6 @@ import { capitalizeFirstLetter, arrangeTask } from "./helper";
 import TextField from "@mui/material/TextField";
 
 export default function Todo() {
-  console.log("hello");
   let [todos, setTodos] = useState(() => arrangeTask(initData));
   let [newTask, setNewTask] = useState("");
   let [darkMode, setDarkMode] = useState(true);
@@ -29,20 +28,20 @@ export default function Todo() {
   const eventHandler = (event) => {
     setNewTask(event.target.value);
   };
-  const addNewTodo = () => {
-    if (newTask == "") {
-      console.log("empty");
-      return;
-    }
+  // const addNewTodo = () => {
+  //   if (newTask == "") {
+  //     ("empty");
+  //     return;
+  //   }
 
-    setTodos(
-      arrangeTask([
-        { task: capitalizeFirstLetter(newTask), id: uuidv4(), isDone: false },
-        ...todos,
-      ])
-    );
-    setNewTask("");
-  };
+  //   setTodos(
+  //     arrangeTask([
+  //       { task: capitalizeFirstLetter(newTask), id: uuidv4(), isDone: false },
+  //       ...todos,
+  //     ])
+  //   );
+  //   setNewTask("");
+  // };
   const toggleTask = (task) => {
     setTodos(task);
   };
@@ -57,7 +56,7 @@ export default function Todo() {
       >
         {darkMode ? "Light" : "Dark"}
       </button>
-      <h1 id="list-title">Todo List</h1>
+      <h1 id="list-title">New Todo List</h1>
       <p id="task-stats">
         <span>
           Pending Task:

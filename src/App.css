@@ -1,8 +1,30 @@
 #root {
-  height: 90vh;
+  height: 100vh;
   margin: auto;
-  width: 300px;
+  width: 1050px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 150px;
+  padding: 0px 20px;
+}
+/* Mobile View Port Media Query  */
+@media (max-width: 480px) {
+  #root {
+    height: 100vh;
+    width: 100vw;
+  }
+  #todo-title {
+    font-size: 1.3rem;
+  }
+  .top {
+    padding: 15px;
+    height: 15%;
+  }
 }

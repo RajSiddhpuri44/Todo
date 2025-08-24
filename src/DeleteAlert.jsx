@@ -20,7 +20,10 @@ export default function AlertDialog({ todos, toggleTask, id }) {
 
   return (
     <React.Fragment>
-      <DeleteIcon onClick={handleClickOpen}></DeleteIcon>
+      <DeleteIcon
+        onClick={handleClickOpen}
+        style={{ fontSize: "20px" }}
+      ></DeleteIcon>
       <Dialog
         open={open}
         onClose={handleClose}

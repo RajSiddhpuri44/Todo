@@ -1,0 +1,26 @@
+.todoInput {
+  width: 250px;
+  background-color: #ffb74d;
+  color: black;
+  border: 2px solid rgb(92, 90, 90);
+  border-radius: 5px;
+}
+#input-controls {
+  display: flex;
+  gap: 10px;
+}
+/* Mobile View Port Media Query  */
+@media (max-width: 480px) {
+  .todoInput {
+    width: 100%;
+  }
+  #input-controls {
+    display: none;
+  }
+  .add-todo-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+  }
+}
