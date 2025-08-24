@@ -1,6 +1,7 @@
 import "./TodoCards.css";
-import { checkHandler, arrangeTask } from "./helper";
-
+import { checkHandler } from "./helper";
+import DeleteAlert from "./DeleteAlert";
+import EditAlert from "./EditAlert";
 export default function TodoCards({ todo, useSetTodos, todos }) {
   return (
     <>
@@ -25,8 +26,13 @@ export default function TodoCards({ todo, useSetTodos, todos }) {
               checkHandler(todo.id, todos, useSetTodos);
             }}
           />
-          <i className="fa-solid fa-trash"></i>
-          <i className="fa-solid fa-pen-to-square"></i>
+          <DeleteAlert todos={todos} toggleTask={useSetTodos} id={todo.id} />
+          <EditAlert
+            todos={todos}
+            toggleTask={useSetTodos}
+            task={todo}
+            disabled={todo.isDone}
+          />
         </div>
         <p className="task-name text-element">Task: {todo.task}</p>
         <p className="text-element">Created: {todo.createdDate}</p>

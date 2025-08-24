@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./DialogBox.css";
-import { arrangeTask, capitalizeFirstLetter } from "./helper";
+import { arrangeTask, capitalizeFirstLetter, formatDateInput } from "./helper";
 import { v4 as uuidv4 } from "uuid";
 
 export default function DialogBox({
@@ -26,7 +26,7 @@ export default function DialogBox({
           isDone: false,
           description: newDescription,
           createdDate: new Date().toLocaleDateString(),
-          dueDate: dueDate,
+          dueDate: formatDateInput(dueDate),
         },
         ...todos,
       ])

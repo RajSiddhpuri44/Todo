@@ -27,10 +27,12 @@ function arrangeTask(todos) {
 }
 
 // Edit Todo Function
-function editTodo(todos, id, newTask) {
+function editTodo(todos, id, newTask, dueDate) {
+  console.log(dueDate);
   let newTodos = todos.map((todo) => {
     if (todo.id === id) {
       todo.task = newTask;
+      todo.dueDate = formatDateInput(dueDate);
       return todo;
     } else {
       return todo;
@@ -38,11 +40,17 @@ function editTodo(todos, id, newTask) {
   });
   return newTodos;
 }
-
+// Function to format date from DATE TYPE INPUT
+function formatDateInput(value) {
+  if (!value) return "";
+  const [year, month, day] = value.split("-");
+  return `${day}/${month}/${year}`;
+}
 export {
   checkHandler,
   capitalizeFirstLetter,
   removeTask,
   arrangeTask,
   editTodo,
+  formatDateInput,
 };
