@@ -1,14 +1,28 @@
 import "./TodoCards.css";
-export default function TodoCards({ todos, idx }) {
+import { checkHandler, arrangeTask } from "./helper";
+
+export default function TodoCards({ todo, useSetTodos }) {
   return (
     <>
       <div className="single-todo-card">
-        <p className="task-name text-element">Task: {todos.task}</p>
-        <p className="text-element">Created:{todos.createdDate}</p>
-        <p className="text-element">Due: {todos.dueDate}</p>
+        <div className="card-control">
+          <input
+            // checked={todo.isDone}
+            // disable={todo.isDone}
+            type="checkbox"
+            name="todo-check"
+            id="todo-check"
+            onChange={() => {}}
+          />
+          <i className="fa-solid fa-trash"></i>
+          <i className="fa-solid fa-pen-to-square"></i>
+        </div>
+        <p className="task-name text-element">Task: {todo.task}</p>
+        <p className="text-element">Created:{todo.createdDate}</p>
+        <p className="text-element">Due: {todo.dueDate}</p>
         <p className="task-description text-element">
           Description: <br />
-          {todos.description}
+          {todo.description}
         </p>
       </div>
     </>

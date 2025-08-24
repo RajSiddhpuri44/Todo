@@ -11,24 +11,26 @@ export default function TodoInput({ useSetTodos, todos }) {
   }
   return (
     <>
-      <button
-        className="add-todo-form"
-        onClick={() => {
-          setDialogBox(!dialogBox);
-          console.log("dialog box");
-        }}
-      >
-        Add
-      </button>
-      {dialogBox ? (
-        <DialogBox
-          toggleDialogBox={toggleDialogBox}
-          dialogBox={dialogBox}
-          useSetTodos={useSetTodos}
-          todos={todos}
-          useSetDialogBox={useSetDialogBox}
-        />
-      ) : null}
+      <div className="todo-form-main">
+        <button
+          className="add-todo-form"
+          onClick={() => {
+            setDialogBox(!dialogBox);
+            console.log("dialog box");
+          }}
+        >
+          Add
+        </button>
+        {dialogBox ? (
+          <DialogBox
+            toggleDialogBox={toggleDialogBox}
+            dialogBox={dialogBox}
+            useSetTodos={useSetTodos}
+            todos={todos}
+            useSetDialogBox={useSetDialogBox}
+          />
+        ) : null}
+      </div>
     </>
   );
 }
