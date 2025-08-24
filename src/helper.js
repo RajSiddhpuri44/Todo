@@ -46,6 +46,18 @@ function formatDateInput(value) {
   const [year, month, day] = value.split("-");
   return `${day}/${month}/${year}`;
 }
+
+//Function to formate date for input type date
+function toISODate(dateStr) {
+  // dateStr is in dd/mm/yyyy or d/m/yyyy
+  const [day, month, year] = dateStr.split("/").map(Number);
+
+  // pad with leading zeros if needed
+  const dd = String(day).padStart(2, "0");
+  const mm = String(month).padStart(2, "0");
+
+  return `${year}-${mm}-${dd}`; // yyyy-MM-dd
+}
 export {
   checkHandler,
   capitalizeFirstLetter,
@@ -53,4 +65,5 @@ export {
   arrangeTask,
   editTodo,
   formatDateInput,
+  toISODate,
 };

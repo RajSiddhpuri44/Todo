@@ -6,14 +6,14 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import DialogTitle from "@mui/material/DialogTitle";
-import { editTodo } from "./helper";
+import { editTodo, toISODate } from "./helper";
 export default function FormDialog({ task, toggleTask, todos, disabled }) {
   if (disabled) {
     return;
   }
   const [open, setOpen] = React.useState(false);
   const [editTask, setEditTask] = React.useState(task.task);
-  const [dueDate, setDueDate] = React.useState(task.dueDate);
+  const [dueDate, setDueDate] = React.useState(toISODate(task.dueDate));
 
   const handleClickOpen = () => {
     setOpen(true);
