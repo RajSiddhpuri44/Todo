@@ -21,3 +21,9 @@
   padding: 0;
   margin: 0;
 }
+/* Mobile View Port Media Query  */
+@media (max-width: 480px) {
+  .single-todo-card {
+    width: 100%;
+  }
+}

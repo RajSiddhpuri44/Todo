@@ -11,3 +11,12 @@
   overflow: auto;
   scrollbar-width: none;
 }
+/* Mobile View Port Media Query  */
+@media (max-width: 480px) {
+  .todo-list-main {
+    background-color: green;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -20,7 +20,7 @@ function App() {
         <TodoInput useSetTodos={useSetTodos} todos={todos} />
       </div>
       {/* <Todo /> */}
-      <TodoList todos={todos} />
+      <TodoList useSetTodos={useSetTodos} todos={todos} />
     </>
   );
 }

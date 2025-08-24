@@ -9,3 +9,18 @@
   display: flex;
   gap: 10px;
 }
+/* Mobile View Port Media Query  */
+@media (max-width: 480px) {
+  .todoInput {
+    width: 100%;
+  }
+  #input-controls {
+    display: none;
+  }
+  .add-todo-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+  }
+}
