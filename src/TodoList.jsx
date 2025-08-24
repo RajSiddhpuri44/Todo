@@ -10,7 +10,7 @@ export default function TodoList({ todos, useSetTodos }) {
             <TodoCards
               todo={task}
               key={idx}
-              toggleTask={useSetTodos}
+              useSetTodos={useSetTodos}
               todos={todos}
             />
           );

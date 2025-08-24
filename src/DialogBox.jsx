@@ -18,7 +18,6 @@ export default function DialogBox({
       alert("all fields are required");
       return;
     }
-    console.log("added");
     useSetTodos(
       arrangeTask([
         {

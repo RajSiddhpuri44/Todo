@@ -16,7 +16,6 @@ export default function TodoInput({ useSetTodos, todos }) {
           className="add-todo-form"
           onClick={() => {
             setDialogBox(!dialogBox);
-            console.log("dialog box");
           }}
         >
           Add

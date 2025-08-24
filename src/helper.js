@@ -1,5 +1,4 @@
 function checkHandler(id, todos, toggleTask) {
-  console.log();
   todos.map((task) => {
     if (task.id === id) {
       task.isDone = true;

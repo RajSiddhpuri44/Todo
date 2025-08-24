@@ -30,7 +30,7 @@ export default function Todo() {
   };
   // const addNewTodo = () => {
   //   if (newTask == "") {
-  //     console.log("empty");
+  //     ("empty");
   //     return;
   //   }
 
