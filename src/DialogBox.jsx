@@ -14,6 +14,10 @@ export default function DialogBox({
   let [newDescription, setNewDescription] = useState();
   let [dueDate, setDueDate] = useState("");
   const addTodo = () => {
+    if (!newTask || !newDescription || !dueDate) {
+      console.log("hello");
+      return;
+    }
     console.log("added");
     useSetTodos(
       arrangeTask([

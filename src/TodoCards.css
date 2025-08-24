@@ -1,6 +1,7 @@
 .single-todo-card {
   background-color: #ffe0b2;
-  width: 250px;
+  max-width: 250px;
+  min-width: 100%;
   height: 250px;
   border-radius: 10px;
   display: flex;
@@ -20,10 +21,20 @@
   color: black;
   padding: 0;
   margin: 0;
+  max-width: 100%;
+  min-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /* Mobile View Port Media Query  */
 @media (max-width: 480px) {
   .single-todo-card {
-    width: 100%;
+    width: 90vw;
+    height: 150px;
+  }
+  .text-element {
+    min-width: 200px;
+    max-width: 100%;
   }
 }

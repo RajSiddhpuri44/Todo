@@ -17,7 +17,6 @@
 /* Mobile View Port Media Query  */
 @media (max-width: 480px) {
   #root {
-    background-color: green;
     height: 100vh;
     width: 100vw;
   }
@@ -26,7 +25,6 @@
   }
   .top {
     padding: 15px;
-    background-color: red;
     height: 15%;
   }
 }

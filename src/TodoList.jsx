@@ -1,8 +1,5 @@
 import TodoCards from "./TodoCards";
 import "./TodoList.css";
-import { arrangeTask } from "./helper";
-
-import { useState } from "react";
 
 export default function TodoList({ todos }) {
   return (
